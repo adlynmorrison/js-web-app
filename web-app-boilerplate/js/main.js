@@ -32,5 +32,7 @@ require([
 ], function (Backbone, App){
 	'use strict';
 
-	console.log(Backbone);
+	App.initialize();
+	App.displayTime();
+	console.log(App);
 });
