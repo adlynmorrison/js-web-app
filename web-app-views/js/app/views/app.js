@@ -28,11 +28,11 @@ define([
 		initialize: function(){
 			//append this html to out view's jquery element object
 			this.$el.append(this.html);
-		}
+		},
 
 		onNavAbout: function(e){
 			alert('About button clicked');	
-		}
+		},
 
 		onNavDash: function(e){
 			alert('Dash button clicked');	
