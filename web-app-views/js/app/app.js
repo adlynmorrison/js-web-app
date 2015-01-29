@@ -1,5 +1,6 @@
 define([
 	'app/views/app'
+	'app/views/counter'
 ], function(AppView){
 
 		'use strict';

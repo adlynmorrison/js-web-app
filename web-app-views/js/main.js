@@ -28,7 +28,7 @@ require.config({
 
 require([
 	'backbone',
-	'app/app'
+	'app/app',
 ], function (Backbone, App){
 	'use strict';
 
