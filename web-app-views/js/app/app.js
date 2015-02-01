@@ -1,5 +1,5 @@
 define([
-	'app/views/app'
+	'app/views/app',
 	'app/views/counter'
 ], function(AppView){
 
