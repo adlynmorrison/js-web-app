@@ -29,6 +29,8 @@ define([
 		views: {},
 
 		initialize: function(){
+			this.listenTo(this.model, 'change', this.render);
+
 			this.views['about'] = new AboutView({
 				id: 'page-about',
 				className: 'page-view'
@@ -57,7 +59,7 @@ define([
 			this.$('#page-'+page).show();
 			this.$('#nav-'+page).addClass('active');
 
-			this.model.set('welcomeMessage', 'Welcome to the' + page + ' page!')
+			this.model.set('welcomeMessage', 'Welcome to the ' + page + ' page!')
 		}
 	});
 
