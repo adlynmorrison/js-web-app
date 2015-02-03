@@ -3,22 +3,21 @@ define([
 	'underscore',
 	'backbone',
 	'app/views/counter'
-], function($, _, Backbone){
+], function($, _, Backbone, CounterView){
 	'use strict';
 	//main app view
 	var AppView = Backbone.View.extend({
 		id: 'app-view',
 
 		html: [
-
-		'<div class="navbar">',
-			'<a class="navbar-brand" href="#">Weather Watcher</a>',
-			'<ul class="nav navbar-nav">',
-				'<li id="nav-dash"><a href="#">Dashboard</a></li>',
-				'<li id="nav-about"><a href="#">About</a></li>',
-			'</ul>',
-		'</div>',
-		'<div id="content"></div>'
+			'<div class="navbar">',
+				'<a class="navbar-brand" href="#">Weather Watcher</a>',
+				'<ul class="nav navbar-nav">',
+					'<li id="nav-dash"><a href="#">Dashboard</a></li>',
+					'<li id="nav-about"><a href="#">About</a></li>',
+				'</ul>',
+			'</div>',
+			'<div id="content"></div>'
 		].join(''),
 
 		events: {
