@@ -5,10 +5,10 @@ define([
 
 	'use strict';
 
-	var PlaceCollection = Backbone.Collection.extend({
+	var PlacesCollection = Backbone.Collection.extend({
 		localStorage: new Backbone.LocalStorage("Places"),
 		model: PlaceModel
 	});
 
-	return PlaceCollection;
+	return PlacesCollection;
 });
