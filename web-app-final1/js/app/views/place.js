@@ -24,11 +24,38 @@ define([
 		},
 
 		render: function(){
+			var that = this;
+
 			this.collection.url = {
-				'http://api.wunderground.com/api/'.
+				'http://api.wunderground.com/api/',
+				'4471fe16425adcfb',
+				'forecast/q/',
+				this.model.get('countryCode'),
+				'/',
+				this.model.get('name'),
+				'.json'
 			}.join('');
-			
+
+			this.collection.fetch({
+				success: function (collection, response, options){
+					that.renderDays();
+				},
+				error: function (collection, response, options){
+					console.log('There was an error');
+				}
+			});
+
 			return this;
+		},
+
+		renderDays: function(){
+			var daysHtml = [];
+			this.collection.each(function(element, index, list){
+				daysHtml.push(
+					Templates['day'](element.toJSON())
+				);
+			});
+			this.$bodyEl.html(daysHtml.join(''));
 		}
 	});
 
