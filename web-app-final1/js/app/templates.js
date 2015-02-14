@@ -17,6 +17,14 @@ define([
 		'</div>'
 	//build as array then build as string
 	].join('');
+
+	Templates['day'] = [
+		'<div>'
+			'<img src="<%= icon_url %>" alt="" class="img-thumbnail">',
+			'<br /><%= conditions %>',
+		'</div>'
+	].join('')
+
 	//loop throuhg templates
 	for (var tmpl in Templates) {
 		//on on properties
