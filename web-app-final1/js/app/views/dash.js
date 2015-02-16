@@ -3,8 +3,8 @@ define([
 	'underscore',
 	'backbone',
 	'app/collections/places', 
-	'app/templates'
-], function ($, _, Backbone, PlacesCollection, Templates){
+	'app/views/place'
+], function ($, _, Backbone, PlacesCollection, PlaceView){
 	
 	'use strict';
 
@@ -31,22 +31,32 @@ define([
 		},
 
 		render: function(){
+			var that = this;
+			this.cleanUP();
 			//make sure we actually have templates
 			if(this.collection.length){
 
-				var placesHtml = []
-				//element = indivdual model
 				this.collection.each(function (element, index, list){
-					places.push(Templates['place'](element.toJSON()))
+					var place = new PlaceView({
+						model: element,
+						id: ['place-', element.get('countryCode'), '-', element.get('name')].join('')
+					});
+					that.$placesList.append(place.render().el);
+					that.views.push(place);
 				});
-
-				this.$placesList.html(placesHtml.join(''));
-
 			}else{
 				//if not
 				this.$placesList.html('Sorry, there are no places to display, please add some.');
 			}
 			return this;
+		},
+
+		cleanUP: function(){
+			for (var i = 0; i<this.views.length; i++) {
+				this.views[i].remove();			
+			}
+			this.views.length = 0;
+			this.$placesList.html('');
 		}
 	});
 
