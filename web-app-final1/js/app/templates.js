@@ -19,11 +19,11 @@ define([
 	].join('');
 
 	Templates['day'] = [
-		'<div>'
+		'<div>',
 			'<img src="<%= icon_url %>" alt="" class="img-thumbnail">',
 			'<br /><%= conditions %>',
 		'</div>'
-	].join('')
+	].join('');
 
 	//loop throuhg templates
 	for (var tmpl in Templates) {

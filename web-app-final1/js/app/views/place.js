@@ -4,7 +4,7 @@ define([
 	'backbone', 
 	'app/templates',
 	'app/collections/days'
-], function ($, _, Backbone, Templates, DayCollection){
+], function ($, _, Backbone, Templates, DaysCollection){
 	
 	'use strict';
 
@@ -13,8 +13,6 @@ define([
 		template: Templates['place'],
 
 		collection: new DaysCollection([]),
-
-
 
 		initialize: function(){
 			var html = this.template(this.model.toJSON());
@@ -26,7 +24,7 @@ define([
 		render: function(){
 			var that = this;
 
-			this.collection.url = {
+			this.collection.url = [
 				'http://api.wunderground.com/api/',
 				'4471fe16425adcfb',
 				'forecast/q/',
@@ -34,7 +32,7 @@ define([
 				'/',
 				this.model.get('name'),
 				'.json'
-			}.join('');
+			].join('');
 
 			this.collection.fetch({
 				success: function (collection, response, options){

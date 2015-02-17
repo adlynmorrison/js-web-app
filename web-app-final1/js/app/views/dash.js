@@ -32,7 +32,7 @@ define([
 
 		render: function(){
 			var that = this;
-			this.cleanUP();
+			this.cleanUp();
 			//make sure we actually have templates
 			if(this.collection.length){
 
@@ -51,7 +51,7 @@ define([
 			return this;
 		},
 
-		cleanUP: function(){
+		cleanUp: function(){
 			for (var i = 0; i<this.views.length; i++) {
 				this.views[i].remove();			
 			}
