@@ -25,6 +25,21 @@ define([
 		'</div>'
 	].join('');
 
+
+	Templates['modal'] = [
+		'<div class="modal fade">',
+			'<div class="modal-dialog">',
+				'<div class="modal-content">,
+					<div class="modal-content">',
+						'<buttong type="button" class="close" data-dismis=modal" aria-hidden="true">',
+						'h4 class="modal-title><%=title %></h4>',
+					'</div>',
+					'div class="modal-body">test</div>',
+				'</div>',
+			'</div>',
+		'</div>'
+	].join('');
+
 	//loop throuhg templates
 	for (var tmpl in Templates) {
 		//on on properties
